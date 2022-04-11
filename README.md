@@ -1,8 +1,10 @@
 # [cpbitmap.github.io](https://cpbitmap.githup.io)
 
 ![Website](https://img.shields.io/website?label=Website&url=https%3A%2F%2Fcpbitmap.github.io)
-![typescript](https://img.shields.io/github/languages/top/cpbitmap.githup.io/cpbitmap.githup.io?label=TypeScript)
-![license](https://img.shields.io/github/license/cpbitmap.githup.io/cpbitmap.githup.io?label=License)
+![typescript](https://img.shields.io/github/languages/top/cpbitmap/cpbitmap.github.io?label=TypeScript)
+![license](https://img.shields.io/github/license/cpbitmap/cpbitmap.github.io?label=License)
+
+A free browser based tool that can convert `.cpbitmap` files to multiple image formats.
 
 ## Development
 
