@@ -1,0 +1,327 @@
+:root {
+  --quick-ease: 0.4s ease-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+/* Set global colour values. Taken from GitHub Markdown CSS. */
+[color-mode="light"] {
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-active-bg: hsla(220, 14%, 93%, 1);
+  --color-navbar-blur: rgba(252, 252, 252, 0.83);
+  --color-navbar-fallback: rgba(252, 252, 252, 0.97);
+  --color-navbar-border: rgba(226, 230, 236, 0.99);
+  --color-table-borders: black;
+  --color-scale-black: #1b1f23;
+  --color-scale-white: #ffffff;
+  --color-scale-gray-0: #fafbfc;
+  --color-scale-gray-1: #f6f8fa;
+  --color-scale-gray-2: #e1e4e8;
+  --color-scale-gray-3: #d1d5da;
+  --color-scale-gray-5: #6a737d;
+  --color-scale-gray-6: #586069;
+  --color-scale-gray-7: #444d56;
+  --color-scale-gray-8: #2f363d;
+  --color-scale-blue-1: #dbedff;
+  --color-scale-blue-3: #79b8ff;
+  --color-scale-blue-4: #2188ff;
+  --color-scale-blue-5: #0366d6;
+  --color-scale-blue-8: #032f62;
+  --color-scale-green-3: #85e89d;
+  --color-scale-green-5: #28a745;
+  --color-scale-green-6: #22863a;
+  --color-scale-red-1: #ffdce0;
+  --color-scale-red-8: #9e1c23;
+  --color-scale-purple-5: #6f42c1;
+  --color-scale-purple-6: #5a32a3;
+  --color-text-primary: #24292e;
+  --color-text-secondary: #586069;
+  --color-text-tertiary: #6a737d;
+  --color-text-link: #0366d6;
+  --color-text-white: #ffffff;
+  --color-border-primary: #e1e4e8;
+  --color-border-secondary: hsla(214, 13%, 93%, 1);
+  --color-border-tertiary: #d1d5da;
+  --color-bg-canvas: #ffffff;
+  --color-bg-canvas-inset: #f6f8fa;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #fafbfc;
+  --color-bg-tertiary: #f6f8fa;
+  --color-markdown-code-bg: rgba(27, 31, 35, 0.05);
+  --color-markdown-blockquote-border: hsla(213, 11%, 89%, 1);
+  --color-markdown-table-border: hsla(213, 11%, 89%, 1);
+  --color-markdown-table-tr-border: hsla(213, 11%, 80%, 1);
+  --color-files-explorer-icon: #79b8ff;
+  --color-code-selection-bg: #c8e1ff;
+  --color-diff-blob-num-text: rgba(27, 31, 35, 0.3);
+  --color-diff-blob-num-hover-text: rgba(27, 31, 35, 0.6);
+  --color-prettylights-syntax-comment: #6a737d;
+  --color-prettylights-syntax-constant: #005cc5;
+  --color-prettylights-syntax-entity: #6f42c1;
+  --color-prettylights-syntax-storage-modifier-import: #24292e;
+  --color-prettylights-syntax-entity-tag: #22863a;
+  --color-prettylights-syntax-keyword: #d73a49;
+  --color-prettylights-syntax-string: #032f62;
+  --color-prettylights-syntax-variable: #e36209;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #b31d28;
+  --color-prettylights-syntax-invalid-illegal-text: #fafbfc;
+  --color-prettylights-syntax-invalid-illegal-bg: #b31d28;
+  --color-prettylights-syntax-carriage-return-text: #fafbfc;
+  --color-prettylights-syntax-carriage-return-bg: #d73a49;
+  --color-prettylights-syntax-string-regexp: #22863a;
+  --color-prettylights-syntax-markup-list: #735c0f;
+  --color-prettylights-syntax-markup-heading: #005cc5;
+  --color-prettylights-syntax-markup-italic: #24292e;
+  --color-prettylights-syntax-markup-bold: #24292e;
+  --color-prettylights-syntax-markup-deleted-text: #b31d28;
+  --color-prettylights-syntax-markup-deleted-bg: #ffeef0;
+  --color-prettylights-syntax-markup-inserted-text: #22863a;
+  --color-prettylights-syntax-markup-inserted-bg: #f0fff4;
+  --color-prettylights-syntax-markup-changed-text: #e36209;
+  --color-prettylights-syntax-markup-changed-bg: #ffebda;
+  --color-prettylights-syntax-markup-ignored-text: #f6f8fa;
+  --color-prettylights-syntax-markup-ignored-bg: #005cc5;
+  --color-prettylights-syntax-meta-diff-range: #6f42c1;
+  --color-prettylights-syntax-brackethighlighter-angle: #586069;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #959da5;
+  --color-prettylights-syntax-constant-other-reference-link: #032f62;
+  color-scheme: light;
+}
+
+[color-mode="dark"] {
+  --color-btn-hover-bg: #30363d;
+  --color-btn-active-bg: hsla(212, 12%, 18%, 1);
+  --color-navbar-blur: rgba(13, 17, 23, 0.81);
+  --color-navbar-fallback: rgba(13, 17, 23, 0.97);
+  --color-navbar-border: rgba(26, 30, 36, 0.99);
+  --color-table-borders: white;
+  --color-scale-black: #010409;
+  --color-scale-white: #f0f6fc;
+  --color-scale-gray-0: #f0f6fc;
+  --color-scale-gray-1: #c9d1d9;
+  --color-scale-gray-2: #b1bac4;
+  --color-scale-gray-3: #8b949e;
+  --color-scale-gray-5: #484f58;
+  --color-scale-gray-6: #30363d;
+  --color-scale-gray-7: #21262d;
+  --color-scale-gray-8: #161b22;
+  --color-scale-blue-1: #a5d6ff;
+  --color-scale-blue-3: #58a6ff;
+  --color-scale-blue-4: #388bfd;
+  --color-scale-blue-5: #1f6feb;
+  --color-scale-blue-8: #0c2d6b;
+  --color-scale-green-3: #3fb950;
+  --color-scale-green-5: #238636;
+  --color-scale-green-6: #196c2e;
+  --color-scale-red-1: #ffc1ba;
+  --color-scale-red-8: #67060c;
+  --color-scale-purple-5: #8957e5;
+  --color-scale-purple-6: #6e40c9;
+  --color-text-primary: #c9d1d9;
+  --color-text-secondary: #8b949e;
+  --color-text-tertiary: #8b949e;
+  --color-text-link: #58a6ff;
+  --color-text-white: #f0f6fc;
+  --color-border-primary: #30363d;
+  --color-border-secondary: #21262d;
+  --color-border-tertiary: #6e7681;
+  --color-bg-canvas: #0d1117;
+  --color-bg-canvas-inset: hsla(216, 28%, 5%, 1);
+  --color-bg-primary: #0d1117;
+  --color-bg-secondary: #0d1117;
+  --color-bg-tertiary: #161b22;
+  --color-markdown-code-bg: rgba(240, 246, 252, 0.15);
+  --color-markdown-blockquote-border: hsla(212, 12%, 26%, 1);
+  --color-markdown-table-border: hsla(212, 12%, 26%, 1);
+  --color-markdown-table-tr-border: hsla(212, 12%, 17%, 1);
+  --color-files-explorer-icon: #6e7681;
+  --color-code-selection-bg: rgba(121, 192, 255, 0.3);
+  --color-diff-blob-num-text: rgba(240, 246, 252, 0.3);
+  --color-diff-blob-num-hover-text: rgba(240, 246, 252, 0.6);
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-bg: #b62324;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #1f6feb;
+  --color-prettylights-syntax-markup-italic: #c9d1d9;
+  --color-prettylights-syntax-markup-bold: #c9d1d9;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+  color-scheme: dark;
+}
+
+/* Syntax highlighting classes. Need to move here so they are global */
+.pl-c {
+  color: var(--color-prettylights-syntax-comment);
+  transition: color var(--quick-ease);
+}
+
+.pl-c1,
+.pl-s .pl-v {
+  color: var(--color-prettylights-syntax-constant);
+  transition: color var(--quick-ease);
+}
+
+.pl-e,
+.pl-en {
+  color: var(--color-prettylights-syntax-entity);
+  transition: color var(--quick-ease);
+}
+
+.pl-s .pl-s1,
+.pl-smi {
+  color: var(--color-prettylights-syntax-storage-modifier-import);
+  transition: color var(--quick-ease);
+}
+
+.pl-ent {
+  color: var(--color-prettylights-syntax-entity-tag);
+  transition: color var(--quick-ease);
+}
+
+.pl-k {
+  color: var(--color-prettylights-syntax-keyword);
+  transition: color var(--quick-ease);
+}
+
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+  color: var(--color-prettylights-syntax-string);
+  transition: color var(--quick-ease);
+}
+
+.pl-smw,
+.pl-v {
+  color: var(--color-prettylights-syntax-variable);
+  transition: color var(--quick-ease);
+}
+
+.pl-bu {
+  color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
+  transition: color var(--quick-ease);
+}
+
+.pl-ii {
+  color: var(--color-prettylights-syntax-invalid-illegal-text);
+  background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+.pl-c2 {
+  color: var(--color-prettylights-syntax-carriage-return-text);
+  background-color: var(--color-prettylights-syntax-carriage-return-bg);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+.pl-c2::before {
+  content: "^M";
+}
+
+.pl-sr .pl-cce {
+  font-weight: 700;
+  color: var(--color-prettylights-syntax-string-regexp);
+  transition: color var(--quick-ease);
+}
+
+.pl-ml {
+  color: var(--color-prettylights-syntax-markup-list);
+  transition: color var(--quick-ease);
+}
+
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+  font-weight: 700;
+  color: var(--color-prettylights-syntax-markup-heading);
+  transition: color var(--quick-ease);
+}
+
+.pl-mi {
+  font-style: italic;
+  color: var(--color-prettylights-syntax-markup-italic);
+  transition: color var(--quick-ease);
+}
+
+.pl-mb {
+  font-weight: 700;
+  color: var(--color-prettylights-syntax-markup-bold);
+  transition: color var(--quick-ease);
+}
+
+.pl-md {
+  color: var(--color-prettylights-syntax-markup-deleted-text);
+  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+.pl-mi1 {
+  color: var(--color-prettylights-syntax-markup-inserted-text);
+  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+.pl-mc {
+  color: var(--color-prettylights-syntax-markup-changed-text);
+  background-color: var(--color-prettylights-syntax-markup-changed-bg);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+.pl-mi2 {
+  color: var(--color-prettylights-syntax-markup-ignored-text);
+  background-color: var(--color-prettylights-syntax-markup-ignored-bg);
+  transition: color var(--quick-ease), background-color var(--quick-ease);
+}
+
+.pl-mdr {
+  font-weight: 700;
+  color: var(--color-prettylights-syntax-meta-diff-range);
+  transition: color var(--quick-ease);
+}
+
+.pl-ba {
+  color: var(--color-prettylights-syntax-brackethighlighter-angle);
+  transition: color var(--quick-ease);
+}
+
+.pl-sg {
+  color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
+  transition: color var(--quick-ease);
+}
+
+.pl-corl {
+  text-decoration: underline;
+  color: var(--color-prettylights-syntax-constant-other-reference-link);
+  transition: color var(--quick-ease);
+}
