@@ -1,4 +1,4 @@
-# [cpbitmap.github.io](https://cpbitmap.githup.io)
+# [cpbitmap.github.io](https://cpbitmap.github.io)
 
 ![Website](https://img.shields.io/website?label=Website&url=https%3A%2F%2Fcpbitmap.github.io)
 ![typescript](https://img.shields.io/github/languages/top/cpbitmap/cpbitmap.github.io?label=TypeScript)
