@@ -678,7 +678,7 @@
   font-size: 16px;
   line-height: 1.5;
   overflow-wrap: break-word;
-  max-width: 1000px; /* we added */
+  max-width: 650px; /* we added */
   margin: 1rem auto 0 auto; /* we added */
   padding: 0px 16px 100px 16px; /* we added */
 }

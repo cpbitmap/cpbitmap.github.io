@@ -1,17 +1,21 @@
-import React, { InputHTMLAttributes } from "react";
+import { Button } from "@primer/react";
+import React, { InputHTMLAttributes, useRef } from "react";
 import { useCallback } from "react";
 
 type FileInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onFilesChange: (files: File[]) => void;
   files: File[];
+  style?: React.CSSProperties;
 };
 
 const FileInput = ({
   value,
   onFilesChange = ([]) => {},
   files = [],
+  style,
   ...rest
 }: FileInputProps) => {
+  const labelRef = useRef<HTMLLabelElement>(null);
   const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
     if (fileList) {
@@ -21,38 +25,22 @@ const FileInput = ({
 
   return (
     <>
-      <label>
-        Click to select some files...
-        <input
-          {...rest}
-          style={{ display: "none" }}
-          key={files.length}
-          type="file"
-          onChange={onChange}
-        />
+      <input
+        {...rest}
+        style={{ display: "none" }}
+        key={files.length}
+        id="file"
+        type="file"
+        onChange={onChange}
+      />
+      <label htmlFor="file" ref={labelRef} style={{ ...style, width: "100%" }}>
+        <Button
+          sx={{ width: "100%" }}
+          onClick={() => labelRef.current?.click()}
+        >
+          Select cpbitmap file(s)
+        </Button>
       </label>
-      {files.length > 0 && (
-        <div>
-          <h3>Selected files:</h3>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-            }}
-          >
-            {files.map((file, i) => (
-              <button
-                key={i}
-                onClick={() => onFilesChange(files.filter((_, j) => i !== j))}
-              >
-                {file.name}
-              </button>
-            ))}
-          </div>
-          <br />
-        </div>
-      )}
     </>
   );
 };

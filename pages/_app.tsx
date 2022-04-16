@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import "../styles/global.css";
 
+import { ThemeProvider } from "@primer/react";
 import type { AppProps } from "next/app";
 import React, { createContext, useEffect, useState } from "react";
 
@@ -29,9 +30,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [colorMode]);
 
   return (
-    <ThemeContext.Provider value={{ colorMode, setColorMode }}>
-      <Component {...pageProps} />
-    </ThemeContext.Provider>
+    <ThemeProvider>
+      <ThemeContext.Provider value={{ colorMode, setColorMode }}>
+        <Component {...pageProps} />
+      </ThemeContext.Provider>
+    </ThemeProvider>
   );
 };
 
