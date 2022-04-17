@@ -12,6 +12,7 @@
     "fix-fonts": "source utils/fix-local-fonts.sh"
   },
   "dependencies": {
+    "@primer/octicons-react": "^17.0.0",
     "@primer/react": "^35.2.0",
     "eslint-config-airbnb-base-typescript": "^1.0.0",
     "file-saver": "^2.0.5",

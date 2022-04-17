@@ -1,11 +1,13 @@
-import { Box, Button, IconButton, Spinner, Text } from "@primer/react";
+import { Button, Spinner } from "@primer/react";
 import { saveAs } from "file-saver";
 import Jimp from "jimp/es";
 import type { NextPage } from "next";
 import React, { useState } from "react";
 
-import { DarkmodeToggle } from "../components/DarkmodeToggle";
+// import { DarkmodeToggle } from "../components/DarkmodeToggle";
 import FileInput from "../components/FileInput";
+// import SelectDropdown from "../components/SelectDropdown";
+import SelectedFiles from "../components/SelectedFiles";
 import githubStyles from "../styles/github.module.css";
 
 const calcOffsetInCpbitmap = (x: number, y: number, width: number) => {
@@ -70,80 +72,19 @@ const Home: NextPage = () => {
           alignItems: "flex-start",
         }}
       >
-        <DarkmodeToggle />
+        {/* <DarkmodeToggle /> */}
         <FileInput
           multiple
           onFilesChange={(fs) => setFiles(fs)}
           files={files}
           style={{ marginBottom: 16 }}
         />
-        <div style={{ width: "100%", marginBottom: 16 }}>
-          <Box
-            borderColor="border.default"
-            borderWidth={1}
-            borderStyle="solid"
-            borderTopLeftRadius={6}
-            borderTopRightRadius={6}
-            p={2}
-            bg="pageHeaderBg"
-            sx={{ width: "100%", boxSizing: "border-box" }}
-          >
-            <Text fontWeight="bold" fontSize={1} pl={2}>
-              {files.length === 0 ? "No files selected" : "Files selected"}
-            </Text>
-          </Box>
-          <Box
-            borderColor="border.default"
-            borderWidth={1}
-            borderStyle="solid"
-            borderTopWidth={0}
-            borderBottomLeftRadius={6}
-            borderBottomRightRadius={6}
-            sx={{ width: "100%", boxSizing: "border-box" }}
-          >
-            {files.map(({ name }, i) => (
-              <Box
-                borderTopColor="border.default"
-                borderTopWidth={i === 0 ? 0 : 1}
-                borderTopStyle="solid"
-                p={1}
-                pl={3}
-                sx={{ width: "100%", boxSizing: "border-box" }}
-                key={i}
-              >
-                <Text fontSize={1} sx={{ width: "100%" }}>
-                  {name}
-                </Text>
-                {/* <IconButton
-                  aria-label="Search"
-                  icon={SearchIcon}
-                  size="small"
-                /> */}
-              </Box>
-            ))}
-          </Box>
-        </div>
-        {files.length > 0 && (
-          <div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-              }}
-            >
-              {files.map((file, i) => (
-                <button
-                  key={i}
-                  onClick={() => setFiles(files.filter((_, j) => i !== j))}
-                >
-                  {file.name}
-                </button>
-              ))}
-            </div>
-            <br />
-          </div>
-        )}
+        <SelectedFiles
+          files={files}
+          setFiles={setFiles}
+          style={{ marginBottom: 16 }}
+        />
+        {/* <SelectDropdown /> */}
         <Button
           disabled={files.length === 0}
           onClick={() => {
