@@ -7,7 +7,7 @@ import WidthContainer from "../components/WidthContainer";
 const About: NextPage = () => {
   const { theme } = useTheme();
   return (
-    <WidthContainer>
+    <WidthContainer style={{ paddingBottom: 64 }}>
       <Heading
         as="h1"
         style={{ textAlign: "center" }}
@@ -41,8 +41,8 @@ const About: NextPage = () => {
         What is a cpbitmap file?
       </Heading>
       <Text as="p">
-        The cpbitmap file format is a proprietary file format created by Apple
-        to store iOS background images.
+        The cpbitmap file format is a proprietary format created by Apple to
+        store iOS background images.
       </Text>
       <Heading
         as="h2"
