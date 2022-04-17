@@ -18,7 +18,6 @@ class MyDocument extends Document {
       <Html lang="en-GB">
         <Head>
           {/* This is the default <head> for all pages across the website. */}
-          <script id="theme" src="theme.js" />
           <link rel="icon" href="favicon.ico" />
           {/* This meta should be put in the Head for each page as it will not be the
               same, whereas the two above are the same for all pages */}
