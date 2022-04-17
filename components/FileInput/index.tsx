@@ -1,3 +1,4 @@
+import { UploadIcon } from "@primer/octicons-react";
 import { Button } from "@primer/react";
 import React, { InputHTMLAttributes, useRef } from "react";
 import { useCallback } from "react";
@@ -38,7 +39,8 @@ const FileInput = ({
           sx={{ width: "100%" }}
           onClick={() => labelRef.current?.click()}
         >
-          Select cpbitmap file(s)
+          <UploadIcon />
+          &nbsp;Select cpbitmap file(s)
         </Button>
       </label>
     </>
