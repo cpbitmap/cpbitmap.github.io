@@ -7,10 +7,15 @@ import WidthContainer from "../components/WidthContainer";
 const About: NextPage = () => {
   const { theme } = useTheme();
   return (
-    <WidthContainer style={{ paddingBottom: "64px !important" }}>
+    <WidthContainer
+      style={{
+        paddingBottom: "64px !important",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Heading
         as="h1"
-        // style={{ textAlign: "center" }}
         sx={{
           pb: 1,
           borderBottomWidth: 1,
@@ -96,7 +101,7 @@ const About: NextPage = () => {
         </Link>
         .
       </Text>
-      <Text as="p">
+      <Text as="p" mt={0}>
         There are a few scripts that use his description to convert cpbitmap
         images to other formats, but there doesn&apos;t seem to be a working
         browser based solution. The code used in this tool was originally
