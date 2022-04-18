@@ -33,4 +33,3 @@ The action uses `next build` and `next export` to generate HTML, CSS, and JS fil
 
 - We only know how to convert cpbitmap images due to some clever guessing and trial and error by [Simon Whitehead](https://web.archive.org/web/20130917034207/http://www.codeproject.com/Articles/265333/Reading-Apple-iDevice-CPBitmap-files) in 2011.
 - The code used in this tool was originally written by [dr15 in this Stack Overflow answer](https://stackoverflow.com/a/48158807) to run in Node.js, so it has been slightly edited to run in the browser.
-  
