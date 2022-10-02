@@ -6,9 +6,13 @@ import type { NextPage } from "next";
 import React, { useState } from "react";
 
 import FileInput from "../components/FileInput";
+import { Popover } from "../components/Popover";
 import Select from "../components/Select";
 import SelectedFiles from "../components/SelectedFiles";
+import { StyledLink } from "../components/StyledLink";
 import WidthContainer from "../components/WidthContainer";
+
+type Result = "success" | "failure" | undefined;
 
 // from what I've seen online, I believe that:
 // iOS ~9 is 4 bytes
@@ -57,43 +61,51 @@ const swapRBColors = (c: number) => {
 const Home: NextPage = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<Result>(undefined);
   const [outputFormat, setOutputFormat] = useState(imageFormats[0]);
   const [iosVersion, setIosVersion] = useState(Object.keys(iosOffsets).pop());
 
   const convertCpbitmap = async () => {
-    for (const file of files) {
-      const arrayBuffer = await file.arrayBuffer();
-      if (arrayBuffer) {
-        const buffer = Buffer.from(arrayBuffer);
-        const width = buffer.readInt32LE(buffer.length - 4 * 5);
-        const height = buffer.readInt32LE(buffer.length - 4 * 4);
+    try {
+      for (const file of files) {
+        const arrayBuffer = await file.arrayBuffer();
+        if (arrayBuffer) {
+          const buffer = Buffer.from(arrayBuffer);
+          const width = buffer.readInt32LE(buffer.length - 4 * 5);
+          const height = buffer.readInt32LE(buffer.length - 4 * 4);
 
-        const image = await new Jimp(width, height, 0x000000ff);
+          const image = new Jimp(width, height, 0x000000ff);
 
-        for (let y = 0; y < height; y++) {
-          for (let x = 0; x < width; x++) {
-            const color = buffer.readInt32LE(
-              calcOffsetInCpbitmap(x, y, width, iosVersion)
-            );
-            image.bitmap.data.writeInt32LE(
-              swapRBColors(color),
-              calcOffsetInImage(x, y, width)
-            );
+          for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+              const color = buffer.readInt32LE(
+                calcOffsetInCpbitmap(x, y, width, iosVersion)
+              );
+              image.bitmap.data.writeInt32LE(
+                swapRBColors(color),
+                calcOffsetInImage(x, y, width)
+              );
+            }
           }
+
+          const mime = `image/${outputFormat.toLowerCase()}`;
+          const outputBuffer = await image.getBufferAsync(mime);
+
+          const outputFile = new File(
+            [outputBuffer],
+            `${splitExtension(file.name).name}.${outputFormat.toLowerCase()}`,
+            { type: mime }
+          );
+
+          setLoading(false);
+          setResult("success");
+          saveAs(outputFile);
         }
-
-        const mime = `image/${outputFormat.toLowerCase()}`;
-        const outputBuffer = await image.getBufferAsync(mime);
-
-        const outputFile = new File(
-          [outputBuffer],
-          `${splitExtension(file.name).name}.${outputFormat.toLowerCase()}`,
-          { type: mime }
-        );
-
-        setLoading(false);
-        saveAs(outputFile);
       }
+    } catch (error) {
+      setLoading(false);
+      setResult("failure");
+      console.log(error);
     }
   };
 
@@ -148,6 +160,23 @@ const Home: NextPage = () => {
             </>
           )}
         </Button>
+        {result === "success" && (
+          <Popover success onClose={() => setResult(undefined)}>
+            Check your downloads to see the converted file. Consider starring
+            the{" "}
+            <StyledLink href="https://github.com/cpbitmap/cpbitmap.github.io">
+              GitHub repository
+            </StyledLink>{" "}
+            if this tool was useful.
+          </Popover>
+        )}
+        {result === "failure" && (
+          <Popover success={false} onClose={() => setResult(undefined)}>
+            An error occurred while converting the cpbitmap file. Check your
+            browser&apos;s developer console to see the error. See the{" "}
+            <StyledLink href="about">About</StyledLink> page for help.
+          </Popover>
+        )}
       </div>
     </WidthContainer>
   );

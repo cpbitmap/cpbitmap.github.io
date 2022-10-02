@@ -10,8 +10,8 @@ type SelectProps = {
 };
 
 const Select = ({ options, value, label, onChange, style }: SelectProps) => (
-  <div id={label} style={{ ...style, width: "100%" }}>
-    <label htmlFor={label} style={{ width: "100%" }}>
+  <FormControl id={label} sx={{ ...style, width: "100%" }}>
+    <FormControl.Label htmlFor={label} sx={{ width: "100%" }}>
       <Text
         as="p"
         sx={{
@@ -24,22 +24,15 @@ const Select = ({ options, value, label, onChange, style }: SelectProps) => (
       >
         {label}
       </Text>
-    </label>
-    <FormControl sx={{ width: "100%" }}>
-      <PrimerSelect
-        id={label}
-        onChange={onChange}
-        value={value}
-        sx={{ width: "100%" }}
-      >
-        {options.map((option) => (
-          <PrimerSelect.Option key={option} value={option}>
-            {option}
-          </PrimerSelect.Option>
-        ))}
-      </PrimerSelect>
-    </FormControl>
-  </div>
+    </FormControl.Label>
+    <PrimerSelect onChange={onChange} value={value} sx={{ width: "100%" }}>
+      {options.map((option) => (
+        <PrimerSelect.Option key={option} value={option}>
+          {option}
+        </PrimerSelect.Option>
+      ))}
+    </PrimerSelect>
+  </FormControl>
 );
 
 export default Select;

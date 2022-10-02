@@ -1,11 +1,11 @@
-import { Heading, Link, Text, useTheme } from "@primer/react";
+import { Heading, Text } from "@primer/react";
 import type { NextPage } from "next";
 import React from "react";
 
+import { StyledLink } from "../components/StyledLink";
 import WidthContainer from "../components/WidthContainer";
 
 const About: NextPage = () => {
-  const { theme } = useTheme();
   return (
     <WidthContainer
       style={{
@@ -23,22 +23,11 @@ const About: NextPage = () => {
           borderBottomStyle: "solid",
         }}
       >
-        <Link
-          href="/"
-          style={{ color: theme?.colorSchemes.light.colors.btn.outline.text }}
-        >
-          cpbitmap.github.io
-        </Link>
+        <StyledLink href="/">cpbitmap.github.io</StyledLink>
       </Heading>
       <Text as="p">
-        <Link
-          href="/"
-          style={{ color: theme?.colorSchemes.light.colors.btn.outline.text }}
-        >
-          cpbitmap.github.io
-        </Link>{" "}
-        is a free browser based tool that can convert cpbitmap files to multiple
-        image formats.
+        <StyledLink href="/">cpbitmap.github.io</StyledLink> is a free browser
+        based tool that can convert cpbitmap files to multiple image formats.
       </Text>
       <Heading
         as="h2"
@@ -67,15 +56,28 @@ const About: NextPage = () => {
         If the output image is corrupt or looks like it has been stretched and
         distorted, try selecting another iOS version and exporting again. The
         cpbitmap format has changed slightly over the years and may change again
-        at some point in the future. If this tool is no longer working with a
-        new version of iOS, consider opening an issue on{" "}
-        <Link
-          href="https://github.com/cpbitmap/cpbitmap.github.io"
-          style={{ color: theme?.colorSchemes.light.colors.btn.outline.text }}
-        >
+        at some point in the future. This tool has been tested for iOS versions
+        up to iOS 15. If this tool is no longer working with a new version of
+        iOS, consider opening an issue on{" "}
+        <StyledLink href="https://github.com/cpbitmap/cpbitmap.github.io">
           GitHub
-        </Link>
+        </StyledLink>
         .
+      </Text>
+      <Text as="p" mt={0}>
+        If you encounter an error along the lines of{" "}
+        <code>
+          RangeError: The value &quot;...&quot; is invalid for option
+          &quot;size&quot;
+        </code>
+        , the cpbitmap file may be from an encrypted backup. Consider using{" "}
+        <StyledLink href="https://www.iphonebackupextractor.com/">
+          this free tool
+        </StyledLink>{" "}
+        to extract the cpbitmap files from the encrypted backup. The cpbitmap
+        files are stored in the <code>Home/Library/SpringBoard</code> path of
+        your device (accessible under &quot;expert mode&quot; in the free tool
+        linked above).
       </Text>
       <Heading
         as="h2"
@@ -93,12 +95,9 @@ const About: NextPage = () => {
         Apple have never released any documentation about the layout of cpbitmap
         files. We only know how to convert cpbitmap images due to some clever
         guessing and trial and error by{" "}
-        <Link
-          href="https://web.archive.org/web/20130917034207/http://www.codeproject.com/Articles/265333/Reading-Apple-iDevice-CPBitmap-files"
-          style={{ color: theme?.colorSchemes.light.colors.btn.outline.text }}
-        >
+        <StyledLink href="https://web.archive.org/web/20130917034207/http://www.codeproject.com/Articles/265333/Reading-Apple-iDevice-CPBitmap-files">
           Simon Whitehead in 2011
-        </Link>
+        </StyledLink>
         .
       </Text>
       <Text as="p" mt={0}>
@@ -106,12 +105,9 @@ const About: NextPage = () => {
         images to other formats, but there doesn&apos;t seem to be a working
         browser based solution. The code used in this tool was originally
         written by{" "}
-        <Link
-          href="https://stackoverflow.com/a/48158807"
-          style={{ color: theme?.colorSchemes.light.colors.btn.outline.text }}
-        >
+        <StyledLink href="https://stackoverflow.com/a/48158807">
           dr15 in this Stack Overflow answer
-        </Link>{" "}
+        </StyledLink>{" "}
         to run in Node.js, so it has been slightly edited to run in the browser.
       </Text>
     </WidthContainer>
