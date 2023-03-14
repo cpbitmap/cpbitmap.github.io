@@ -25,7 +25,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) with a browser to see
 
 ## Deployment
 
-The site should automatically be deployed to [https://cpbitmap.githup.io](https://cpbitmap.githup.io) by a GitHub action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) that is triggered when any code is pushed to the [`main`](https://github.com/cpbitmap/cpbitmap.github.io/tree/main) branch.
+The site should automatically be deployed to [https://cpbitmap.githup.io](https://cpbitmap.github.io) by a GitHub action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) that is triggered when any code is pushed to the [`main`](https://github.com/cpbitmap/cpbitmap.github.io/tree/main) branch.
 
 The action uses `next build` and `next export` to generate HTML, CSS, and JS files which can be served statically. Once these files are generated, the [`github-pages-deploy-action`](https://github.com/JamesIves/github-pages-deploy-action) is used to push the generated files to the [`gh-pages`](https://github.com/cpbitmap/cpbitmap.github.io/tree/gh-pages) branch which is used by GitHub pages to serve the files.
 
