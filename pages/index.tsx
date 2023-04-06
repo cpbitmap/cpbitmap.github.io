@@ -1,7 +1,7 @@
 import { DownloadIcon } from "@primer/octicons-react";
 import { Button, Spinner } from "@primer/react";
 import { saveAs } from "file-saver";
-import Jimp from "jimp/es";
+import Jimp from "jimp";
 import type { NextPage } from "next";
 import React, { useState } from "react";
 

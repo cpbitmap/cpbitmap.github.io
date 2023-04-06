@@ -12,15 +12,15 @@
     "fix-fonts": "source utils/fix-local-fonts.sh"
   },
   "dependencies": {
-    "@primer/octicons-react": "^17.0.0",
-    "@primer/react": "^35.2.0",
+    "@primer/octicons-react": "^18.3.0",
+    "@primer/react": "^35.24.0",
     "eslint-config-airbnb-base-typescript": "^1.0.0",
     "file-saver": "^2.0.5",
     "jimp": "^0.16.1",
     "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.8.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
@@ -40,6 +40,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "2.4.1",
-    "typescript": "4.4.2"
+    "typescript": "5.0.3"
   }
 }

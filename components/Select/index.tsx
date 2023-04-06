@@ -10,7 +10,10 @@ type SelectProps = {
 };
 
 const Select = ({ options, value, label, onChange, style }: SelectProps) => (
-  <FormControl id={label} sx={{ ...style, width: "100%" }}>
+  <FormControl
+    id={label}
+    sx={{ ...style, width: "100%", alignItems: "normal" }}
+  >
     <FormControl.Label htmlFor={label} sx={{ width: "100%" }}>
       <Text
         as="p"
