@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -28,8 +24,5 @@
     "public/*.js",
     "utils/generate.mjs"
   ],
-  "exclude": [
-    "node_modules",
-    "tests"
-  ]
+  "exclude": ["node_modules", "tests"]
 }
