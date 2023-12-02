@@ -6,6 +6,10 @@
 
 A free browser based tool that can convert `.cpbitmap` files to multiple image formats.
 
+## Usage
+
+Simply navigate to https://cpbitmap.github.io, select your `.cpbitmap` files from your file browser, choose the output file format and iOS version, and click convert! For troubleshooting, have a look at https://cpbitmap.github.io/about.
+
 ## Development
 
 First, clone the repo and install any dependencies:
