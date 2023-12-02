@@ -8,6 +8,8 @@ import Document, {
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
 
+import MetaTags from "../components/MetaTags";
+
 class MyDocument extends Document {
   // enables static CSS rendering:
   // https://primer.style/react/getting-started#static-css-rendering
@@ -44,13 +46,10 @@ class MyDocument extends Document {
       <Html lang="en-GB">
         <Head>
           {/* This is the default <head> for all pages across the website. */}
-          <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-          <link rel="icon" type="image/png" href="favicon.png" />
-          {/* This meta should be put in the Head for each page as it will not be the
-              same, whereas the two above are the same for all pages */}
-          <meta
-            name="description"
-            content="A free online cpbitmap conversion tool to PNG or JPEG"
+          <MetaTags
+            siteUrl="https://cpbitmap.github.io/"
+            title="CPBitmap Converter"
+            description="A free online cpbitmap conversion tool. Convert cpbitmap files to PNG, JPEG, or TIFF."
           />
         </Head>
         <body>
