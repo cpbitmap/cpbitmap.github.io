@@ -2,11 +2,20 @@ import React from "react";
 
 type MetaTagsProps = {
   siteUrl: string;
+  // It is safer to have a complete the image URL rather than a relative one
+  imageUrl: string;
   title: string;
   description: string;
+  author: string;
 };
 
-const MetaTags = ({ siteUrl, title, description }: MetaTagsProps) => (
+const MetaTags = ({
+  siteUrl,
+  imageUrl,
+  title,
+  description,
+  author,
+}: MetaTagsProps) => (
   <>
     {/* Social media card tags. Generated with https://metatags.io: */}
     <title>{title}</title>
@@ -18,14 +27,14 @@ const MetaTags = ({ siteUrl, title, description }: MetaTagsProps) => (
     <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="cpbitmap-social-media-card.png" />
+    <meta property="og:image" content={imageUrl} />
 
     {/* Twitter: */}
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={siteUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="cpbitmap-social-media-card.png" />
+    <meta property="twitter:image" content={imageUrl} />
 
     {/* Favicon tags. Generated with https://realfavicongenerator.net: */}
     <link
@@ -53,6 +62,9 @@ const MetaTags = ({ siteUrl, title, description }: MetaTagsProps) => (
     />
     <meta name="msapplication-TileColor" content="#2b5797" />
     <meta name="theme-color" content="#ffffff" />
+
+    {/* Other: */}
+    <meta name="author" content={author}></meta>
   </>
 );
 
