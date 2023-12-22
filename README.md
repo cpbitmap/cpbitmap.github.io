@@ -1,3 +1,8 @@
+<br />
+<p align="center">
+  <image width=75 src="./public/cpbitmap-icon.png" />
+</p>
+
 # [cpbitmap.github.io](https://cpbitmap.github.io)
 
 ![Website](https://img.shields.io/website?label=Website&url=https%3A%2F%2Fcpbitmap.github.io)

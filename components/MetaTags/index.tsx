@@ -58,7 +58,7 @@ const MetaTags = ({
     <link
       rel="mask-icon"
       href="favicons/safari-pinned-tab.svg"
-      color="#5bbad5"
+      color="#d10000"
     />
     <meta name="msapplication-TileColor" content="#2b5797" />
     <meta name="theme-color" content="#ffffff" />
