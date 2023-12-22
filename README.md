@@ -1,3 +1,8 @@
+<br />
+<p align="center">
+  <image width=75 src="./public/cpbitmap-icon.png" />
+</p>
+
 # [cpbitmap.github.io](https://cpbitmap.github.io)
 
 ![Website](https://img.shields.io/website?label=Website&url=https%3A%2F%2Fcpbitmap.github.io)
@@ -35,5 +40,5 @@ The action uses `next build` and `next export` to generate HTML, CSS, and JS fil
 
 ## Acknowledgements
 
-- We only know how to convert cpbitmap images due to some clever guessing and trial and error by [Simon Whitehead](https://web.archive.org/web/20130917034207/http://www.codeproject.com/Articles/265333/Reading-Apple-iDevice-CPBitmap-files) in 2011.
+- We only know how to convert `.cpbitmap` images due to some clever guessing and trial and error by [Simon Whitehead](https://web.archive.org/web/20130917034207/http://www.codeproject.com/Articles/265333/Reading-Apple-iDevice-CPBitmap-files) in 2011.
 - The code used in this tool was originally written by [dr15 in this Stack Overflow answer](https://stackoverflow.com/a/48158807) to run in Node.js, so it has been slightly edited to run in the browser.

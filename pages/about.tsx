@@ -27,7 +27,8 @@ const About: NextPage = () => {
       </Heading>
       <Text as="p">
         <StyledLink href="/">cpbitmap.github.io</StyledLink> is a free browser
-        based tool that can convert cpbitmap files to multiple image formats.
+        based tool that can convert <code>.cpbitmap</code> files to multiple
+        image formats.
       </Text>
       <Heading
         as="h2"
@@ -35,12 +36,12 @@ const About: NextPage = () => {
           fontSize: 3,
         }}
       >
-        What is a cpbitmap file?
+        What is a CPBitmap file?
       </Heading>
       <Text as="p">
-        The cpbitmap file format is a proprietary format created by Apple to
-        store iOS background images. The most common examples are the{" "}
-        <code>LockBackground.cpbitmap</code> and{" "}
+        The <code>.cpbitmap</code> file format is a proprietary format created
+        by Apple to store iOS background images. The most common examples are
+        the <code>LockBackground.cpbitmap</code> and{" "}
         <code>HomeBackground.cpbitmap</code> files found in iPhone or iPad
         backups.
       </Text>
@@ -55,10 +56,10 @@ const About: NextPage = () => {
       <Text as="p">
         If the output image is corrupt or looks like it has been stretched and
         distorted, try selecting another iOS version and exporting again. The
-        cpbitmap format has changed slightly over the years and may change again
-        at some point in the future. This tool has been tested for iOS versions
-        up to iOS 15. If this tool is no longer working with a new version of
-        iOS, consider opening an issue on{" "}
+        <code>.cpbitmap</code> format has changed slightly over the years and
+        may change again at some point in the future. This tool has been tested
+        for iOS versions up to iOS 15. If this tool is no longer working with a
+        new version of iOS, consider opening an issue on{" "}
         <StyledLink href="https://github.com/cpbitmap/cpbitmap.github.io">
           GitHub
         </StyledLink>
@@ -70,11 +71,13 @@ const About: NextPage = () => {
           RangeError: The value &quot;...&quot; is invalid for option
           &quot;size&quot;
         </code>
-        , the cpbitmap file may be from an encrypted backup. Consider using{" "}
+        , the <code>.cpbitmap</code> file may be from an encrypted backup.
+        Consider using{" "}
         <StyledLink href="https://www.iphonebackupextractor.com/">
           this free tool
         </StyledLink>{" "}
-        to extract the cpbitmap files from the encrypted backup. The cpbitmap
+        to extract the <code>.cpbitmap</code> files from the encrypted backup.
+        The <code>.cpbitmap</code>
         files are stored in the <code>Home/Library/SpringBoard</code> path of
         your device (accessible under &quot;expert mode&quot; in the free tool
         linked above).
@@ -89,19 +92,21 @@ const About: NextPage = () => {
           borderBottomStyle: "solid",
         }}
       >
-        How do we know how to convert cpbitmap files?
+        How do we know how to convert CPBitmap files?
       </Heading>
       <Text as="p">
-        Apple have never released any documentation about the layout of cpbitmap
-        files. We only know how to convert cpbitmap images due to some clever
-        guessing and trial and error by{" "}
+        Apple have never released any documentation about the layout of{" "}
+        <code>.cpbitmap</code>
+        files. We only know how to convert <code>.cpbitmap</code> images due to
+        some clever guessing and trial and error by{" "}
         <StyledLink href="https://web.archive.org/web/20130917034207/http://www.codeproject.com/Articles/265333/Reading-Apple-iDevice-CPBitmap-files">
           Simon Whitehead in 2011
         </StyledLink>
         .
       </Text>
       <Text as="p" mt={0}>
-        There are a few scripts that use his description to convert cpbitmap
+        There are a few scripts that use his description to convert{" "}
+        <code>.cpbitmap</code>
         images to other formats, but there doesn&apos;t seem to be a working
         browser based solution. The code used in this tool was originally
         written by{" "}

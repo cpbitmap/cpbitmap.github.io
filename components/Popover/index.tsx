@@ -34,8 +34,8 @@ export const Popover = ({
         sx={{ fontSize: 2, color: success ? "success.fg" : "danger.fg" }}
       >
         {success
-          ? " Successfully converted cpbitmap"
-          : "Could not convert cpbitmap"}
+          ? " Successfully converted CPBitmap"
+          : "Could not convert CPBitmap"}
       </Heading>
       <IconButton
         aria-label={"Close error window"}

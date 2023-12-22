@@ -172,9 +172,9 @@ const Home: NextPage = () => {
         )}
         {result === "failure" && (
           <Popover success={false} onClose={() => setResult(undefined)}>
-            An error occurred while converting the cpbitmap file. Check your
-            browser&apos;s developer console to see the error. See the{" "}
-            <StyledLink href="about">About</StyledLink> page for help.
+            An error occurred while converting the <code>.cpbitmap</code> file.
+            Check your browser&apos;s developer console to see the error. See
+            the <StyledLink href="about">About</StyledLink> page for help.
           </Popover>
         )}
       </div>

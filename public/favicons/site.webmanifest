@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "CPBitmap",
+  "short_name": "CPBitmap",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

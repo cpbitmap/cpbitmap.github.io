@@ -48,9 +48,9 @@ class MyDocument extends Document {
           {/* This is the default <head> for all pages across the website. */}
           <MetaTags
             siteUrl="https://cpbitmap.github.io/"
-            imageUrl="https://cpbitmap.github.io/cpbitmap-social-media-card.png"
+            imageUrl="https://cpbitmap.github.io/cpbitmap-social-card.png"
             title="CPBitmap Converter"
-            description="A free online cpbitmap conversion tool. Convert cpbitmap files to PNG, JPEG, or TIFF."
+            description="A free online CPBitmap conversion tool. Convert CPBitmap files to PNG, JPEG, or TIFF."
             author="Ainsley Rutterford"
           />
         </Head>
