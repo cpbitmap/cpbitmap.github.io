@@ -40,7 +40,7 @@ const FileInput = ({
           onClick={() => labelRef.current?.click()}
         >
           <UploadIcon />
-          &nbsp;Select cpbitmap file(s)
+          &nbsp;Select CPBitmap file(s)
         </Button>
       </label>
     </>
