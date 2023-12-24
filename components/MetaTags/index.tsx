@@ -55,11 +55,6 @@ const MetaTags = ({
       href="favicons/favicon-16x16.png"
     />
     <link rel="manifest" href="favicons/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="favicons/safari-pinned-tab.svg"
-      color="#d10000"
-    />
     <meta name="msapplication-TileColor" content="#2b5797" />
     <meta name="theme-color" content="#ffffff" />
 
